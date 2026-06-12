@@ -33,7 +33,7 @@ async function getSheetsClient() {
         'orbe-sheets-sync@orbe-field.iam.gserviceaccount.com',
       private_key: privateKey.replace(/\\n/g, '\n'),
     },
-    scopes: SCOPES,
+    scopes: [...SCOPES],
   })
 
   return google.sheets({ version: 'v4', auth })
