@@ -834,7 +834,7 @@ export default function CatalogoPage() {
                   scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
               >
                 {TABS.map((tab) => {
-                  const hasFiles = tabHasFiles(tab)
+                  const hasFiles = tabHasFiles(tab.id)
                   const isActive = activeTab === tab.id
                   return (
                     <button

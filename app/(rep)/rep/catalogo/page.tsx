@@ -489,7 +489,7 @@ export default function RepCatalogoPage() {
               shadow-[0_2px_12px_rgba(0,0,0,0.07)] px-3 flex items-center justify-between shrink-0">
               <div className="flex items-center overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 {TABS.map((tab) => {
-                  const hasFiles = tabHasFiles(tab)
+                  const hasFiles = tabHasFiles(tab.id)
                   const isActive = activeTab === tab.id
                   return (
                     <button key={tab.id} onClick={() => setActiveTab(tab.id)}
