@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 96.1%;       /* #F5F5F7 Apple background */
+    --foreground: 0 0% 11.4%;       /* #1D1D1F Apple text */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11.4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11.4%;
+    --primary: 211 100% 44.5%;      /* #0071E3 Apple blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 91%;          /* #E8E8ED */
+    --secondary-foreground: 0 0% 11.4%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 43.1%; /* #6E6E73 */
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 11.4%;
+    --destructive: 3 100% 59.6%;    /* #FF3B30 Apple red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 82.4%;           /* #D2D2D7 */
+    --input: 0 0% 95%;
+    --ring: 211 100% 44.5%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-0 border-border;
+  }
+
+  body {
+    @apply bg-[#F5F5F7] text-[#1D1D1F] font-sans antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Botão primário Apple */
+  .btn-primary {
+    @apply bg-[#0071E3] text-white rounded-xl px-5 py-2.5 text-sm font-medium
+           hover:bg-[#0077ED] active:bg-[#006BD6] transition-colors duration-150
+           shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#0071E3]/30;
+  }
+
+  /* Input estilo Apple */
+  .input-apple {
+    @apply w-full bg-gray-50 border-0 rounded-xl px-4 py-3 text-sm
+           focus:outline-none focus:ring-2 focus:ring-[#0071E3]/20 focus:bg-white
+           placeholder:text-gray-400 transition-all duration-150;
+  }
+
+  /* Card estilo Apple */
+  .card-apple {
+    @apply bg-white rounded-2xl shadow-apple-sm p-6;
+  }
+
+  /* Glassmorphism modal */
+  .glass-modal {
+    @apply backdrop-blur-md bg-white/80 border border-white/20 rounded-2xl shadow-apple-lg;
+  }
+
+  /* Sidebar link */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
+           text-[#3A3A3C] hover:bg-gray-100 transition-colors duration-150 cursor-pointer;
+  }
+
+  .sidebar-link.active {
+    @apply bg-[#0071E3]/10 text-[#0071E3];
+  }
+}
+
+@layer utilities {
+  /* Scroll suave */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Texto gradiente Apple */
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#0071E3] to-[#00B4D8] bg-clip-text text-transparent;
+  }
+}
