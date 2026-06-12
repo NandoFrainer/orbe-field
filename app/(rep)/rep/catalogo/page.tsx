@@ -158,7 +158,7 @@ export default function RepCatalogoPage() {
       }
       if (e.key === 'Escape') {
         if (searchRef.current === document.activeElement) {
-          searchRef.current.blur()
+          searchRef.current?.blur()
           setSearch('')
           setSelected(null)
         }
