@@ -8,8 +8,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getAdminApp, getAdminDb } from '@/lib/firebase-admin'
 import { getStorage } from 'firebase-admin/storage'
 
-// Next.js: permite body maior para uploads
-export const config = { api: { bodyParser: false } }
+export const runtime = 'nodejs'
 
 export async function POST(req: NextRequest) {
   try {
